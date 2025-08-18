@@ -5,8 +5,6 @@ A tiny, dependency-light Python script that fires endless random chords at you f
 A tiny, dependency-light Python script that fires endless random chords at you, waits for you to guess the notes of the chord (preferably training with a piano), and then reveals the correct answer.  
 Perfect for drilling jazz chords, classical harmony, or just getting faster at reading chord symbols.
 
----
-
 ## ✨ Features
 
 - **Random chord generation**  
@@ -27,8 +25,6 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 - **No external dependencies**  
   Uses only the Python standard library.
 
----
-
 ## 🚀 Quick Start
 
 1. Clone or download this repo.
@@ -38,7 +34,6 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 ```bash
 python chord_trainer.py
 ```
----
 ## ⚒ Options and Modding
 Currently, *getachord* function, the main function of the code takes in 6 variables:
 
@@ -57,7 +52,6 @@ If you want to, you could also start modding and pulling this function:
 from chord_trainer import getachord
 getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=False, easy_tonality_mode=False, easy_reading_mode=False)
 ```
----
 ## 🕹 example session:
 ```text
 --------------------------------------------------
@@ -71,7 +65,6 @@ you should play the following notes: ['F#', 'A', 'E', 'G#', 'D#']
 --------------------------------------------------
 Again? (y or n):
 ```
----
 ## 🤝 Contributing
 Pull requests welcome!
 Ideas: MIDI output, GUI, statistics tracking, or more chord symbols.

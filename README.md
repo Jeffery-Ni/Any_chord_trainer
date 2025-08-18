@@ -49,7 +49,7 @@ Currently, *getachord* function, the main function of the code takes in 6 variab
 | `no_extention`       | bool | False   | Disable add9 / add11 / add13           |
 | `no_omissions`       | bool | False   | Disable `no3`, `no5`, `no7`, `no9`     |
 | `easy_tonality_mode` | bool | False   | Lock tonality to C                     |
-| `easy_reading_mode`  | bool | True    | Use pipe-separated symbols for clarity |
+| `easy_reading_mode`  | bool | False   | Use or don't use pipe-separated symbols for clarity |
 
 If you want to, you could also start modding and pulling this function:
 

@@ -12,7 +12,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 
 - **Two readability modes**  
   - *Easy mode* – symbols are split with pipes, e.g. `Cmaj7|add9|no5`.  
-  - *Pro mode* – compact symbols, e.g. `Cmaj7add9no5`.
+  - *Gibberish mode* – compact symbols, e.g. `Cmaj7add9no5` (I don't know how to output corner mark in command lines so good luck reading this).
 
 - **Flexible tonality system**  
   - “Baby mode” locks everything to **C** so you can focus on chord qualities.  

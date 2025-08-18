@@ -86,5 +86,4 @@ Pull requests welcome!
 Ideas: MIDI output, GUI, statistics tracking, or more chord symbols.
 
 ## 📜 Lisence
-Pull requests welcome!
-Ideas: MIDI output, GUI, statistics tracking, or more chord symbols.
+Published under GPL v3.0 lisence

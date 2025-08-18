@@ -22,7 +22,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
   A background thread that GENTLY nags you to drink water every 20 minutes so you stay hydrated while practicing.  
   ➜ Disable by commenting out the two `wp.water_timer` lines.
 
-- **No external dependencies**  
+- **Light external dependencies**  
   Uses only the Python standard library.
 
 ## 🚀 Quick Start
@@ -45,6 +45,7 @@ Currently, *getachord* function, the main function of the code takes in 6 variab
 | `no_omissions`       | bool | False   | Disable `no3`, `no5`, `no7`, `no9`     |
 | `easy_tonality_mode` | bool | False   | Lock tonality to C                     |
 | `easy_reading_mode`  | bool | False   | Use or don't use pipe-separated symbols for clarity |
+| `play_the_chord`  | bool | False   | * This one uses additional module called sounddevice from play_chord_test.py |
 
 If you want to, you could also start modding and pulling this function:
 

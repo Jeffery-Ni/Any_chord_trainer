@@ -59,7 +59,7 @@ getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omis
 ```
 ---
 ## 🕹 example session:
-
+```bash
 --------------------------------------------------
 Welcome to the chord trainer!
 --------------------------------------------------
@@ -70,4 +70,6 @@ Input anything to see the answer
 you should play the following notes: ['F#', 'A', 'E', 'G#', 'D#']
 --------------------------------------------------
 Again? (y or n):
+```
 ---
+

@@ -24,6 +24,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 
 - **Light external dependencies**  
   Uses only the Python standard library.
+  ➜ The only additional module is "sounddevice" from play_chord_test.py, if play_the_chord option is false, you don't need any additional dependency
 
 ## 🚀 Quick Start
 
@@ -45,7 +46,7 @@ Currently, *getachord* function, the main function of the code takes in 6 variab
 | `no_omissions`       | bool | False   | Disable `no3`, `no5`, `no7`, `no9`     |
 | `easy_tonality_mode` | bool | False   | Lock tonality to C                     |
 | `easy_reading_mode`  | bool | False   | Use or don't use pipe-separated symbols for clarity |
-| `play_the_chord`  | bool | False   | * This one uses additional module called sounddevice from play_chord_test.py |
+| `play_the_chord`  | bool | False   | * This one uses additional module called "sounddevice" from play_chord_test.py |
 
 If you want to, you could also start modding and pulling this function:
 

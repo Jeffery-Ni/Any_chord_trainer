@@ -25,7 +25,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 - **Light external dependencies**  
   Uses only the Python standard library.
   ➜ The only additional module is `sounddevice` from `play_chord_test.py`, if play_the_chord option is false, you don't need any additional dependency
-- **🎧 You can play the chord to see if you are right!! 🎧**
+- **🎧 You can play the chord to see if you are right!! 🎧** *(optional)*  
   As stated above, this functions needs additionsl package
 
 ## 🚀 Quick Start

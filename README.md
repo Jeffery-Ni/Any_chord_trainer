@@ -21,7 +21,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
   - Full mode randomly chooses from 21 tonalities (sharps, flats, and enharmonic mixes).
 
 - **Water reminder** *(optional)*  
-  A background thread that gently nags you to drink water every 30 minutes so you stay hydrated while practicing.  
+  A background thread that GENTLY nags you to drink water every 20 minutes so you stay hydrated while practicing.  
   ➜ Disable by commenting out the two `wp.water_timer` lines.
 
 - **No external dependencies**  

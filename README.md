@@ -46,7 +46,7 @@ Currently, *getachord()* function, the main function of the code takes in 6 vari
 | `no_modification`    | bool | False   | Disable 9/11/13 modifications          |
 | `no_extention`       | bool | False   | Disable add9 / add11 / add13           |
 | `no_omissions`       | bool | False   | Disable `no3`, `no5`, `no7`, `no9`     |
-| `easy_tonality_mode` | bool | False   | Lock tonality to C                     |
+| `easy_tonality_mode` | bool | False   | Lock tonality and chosen note to C    |
 | `easy_reading_mode`  | bool | False   | Use or don't use pipe-separated symbols for clarity |
 | 🎧🎧`play_the_chord`  | bool | False   | * This one uses additional module called "sounddevice" from play_chord_test.py |
 

@@ -10,7 +10,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 ## ✨ Features
 
 - **Random chord generation**  
-  Major, minor, diminished, augmented, sus2/4, 6, 7, maj7, m7, m(maj7), dim7, 9, 11, 13, plus `add` and `omit` options.
+  Major, minor, diminished, augmented, sus2/4, 6, 7, maj7, m7, m(maj7), dim7, 9, 11, 13, plus `modification`, `extention` and `omissions` options.
 
 - **Two readability modes**  
   - *Easy mode* – symbols are split with pipes, e.g. `Cmaj7|add9|no5`.  
@@ -37,3 +37,8 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 
 ```bash
 python chord_trainer.py
+
+```
+from chord_trainer import getachord
+getachord(number_of_chords=5, easy_tonality_mode=True, easy_reading_mode=True)
+

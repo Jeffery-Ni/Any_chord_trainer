@@ -59,7 +59,7 @@ getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omis
 ```
 ---
 ## 🕹 example session:
-```bash
+```text
 --------------------------------------------------
 Welcome to the chord trainer!
 --------------------------------------------------

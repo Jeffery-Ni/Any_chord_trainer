@@ -1,8 +1,8 @@
 # Any_chord_trainer
 A tiny, dependency-light Python script that fires endless random chords at you for recognition training
-# 🎹 Chord Trainer
 
-A tiny, dependency-light Python script that fires endless random chords at you, waits for you to guess the notes on your instrument, and then reveals the correct answer.  
+# 🎹 Chord Recognition Trainer
+A tiny, dependency-light Python script that fires endless random chords at you, waits for you to guess the notes of the chord (preferably training with a piano), and then reveals the correct answer.  
 Perfect for drilling jazz chords, classical harmony, or just getting faster at reading chord symbols.
 
 ---
@@ -72,4 +72,6 @@ you should play the following notes: ['F#', 'A', 'E', 'G#', 'D#']
 Again? (y or n):
 ```
 ---
-## 
+## 🤝 Contributing
+Pull requests welcome!
+Ideas: MIDI output, GUI, statistics tracking, or more chord symbols.

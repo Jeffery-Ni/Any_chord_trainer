@@ -55,5 +55,5 @@ If you want to, you could also start modding and pulling this function:
 
 ```python
 from chord_trainer import getachord
-getachord(number_of_chords=5, easy_tonality_mode=True, easy_reading_mode=True)
+getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=False, easy_tonality_mode=False, easy_reading_mode=False)
 

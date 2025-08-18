@@ -60,16 +60,26 @@ getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omis
 ```
 ## 🕹 example session:
 ```text
---------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------
 Welcome to the chord trainer!
---------------------------------------------------
-Ready to go? (y or n): y
-Chosen tonality this time: A (only influences the annotation, not the chord).
-Let's play a: F#m9|add13|no5
+This program will help you practice identifying and playing various chords.
+You will be prompted to play a chord, and then the program will reveal the notes in that chord.
+Let's get started!
+--------------------------------------------------------------------------------------------------------------------------------------------
+Ready to go? (y or n), if you don't say anything i'll continue: y
+Chosen tonality this time: G (only influences the annotation, not the chord).
+I'm feeling like a: F#m
 Input anything to see the answer
-you should play the following notes: ['F#', 'A', 'E', 'G#', 'D#']
---------------------------------------------------
-Again? (y or n):
+you should play the following notes: ['F#', 'A', 'C#']
+--------------------------------------------------------------------------------------------------------------------------------------------
+Again? (y or n), if you don't say anything i'll continue: y
+Chosen tonality this time: B (only influences the annotation, not the chord).
+How about a: Fm(M9)11no5
+Input anything to see the answer
+you should play the following notes: ['F', 'G#', 'E', 'G', 'A#']
+--------------------------------------------------------------------------------------------------------------------------------------------
+Again? (y or n), if you don't say anything i'll continue: n
+Fine, I'll go >:(
 ```
 ## 🤝 Contributing
 Pull requests welcome!

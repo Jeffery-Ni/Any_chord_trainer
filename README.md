@@ -37,8 +37,12 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 
 ```bash
 python chord_trainer.py
-
 ```
+---
+
+If you want to, you could also start modding and pulling this function by:
+
+```python
 from chord_trainer import getachord
 getachord(number_of_chords=5, easy_tonality_mode=True, easy_reading_mode=True)
 

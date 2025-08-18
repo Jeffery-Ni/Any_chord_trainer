@@ -24,7 +24,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 
 - **Light external dependencies**  
   Uses only the Python standard library.
-  ➜ The only additional module is "sounddevice" from play_chord_test.py, if play_the_chord option is false, you don't need any additional dependency
+  ➜ The only additional module is `sounddevice` from `play_chord_test.py`, if play_the_chord option is false, you don't need any additional dependency
 
 ## 🚀 Quick Start
 
@@ -48,11 +48,13 @@ Currently, *getachord* function, the main function of the code takes in 6 variab
 | `easy_reading_mode`  | bool | False   | Use or don't use pipe-separated symbols for clarity |
 | `play_the_chord`  | bool | False   | * This one uses additional module called "sounddevice" from play_chord_test.py |
 
+If the training is too hard for you with all of these options, turn some of them off with "True" to that variable
 If you want to, you could also start modding and pulling this function:
 
 ```python
 from chord_trainer import getachord
-getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=False, easy_tonality_mode=False, easy_reading_mode=False)
+def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=False, easy_tonality_mode=False, easy_reading_mode=False, play_the_chord=False):
+
 ```
 ## 🕹 example session:
 ```text

@@ -116,7 +116,10 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
             random_note = rd.choice(alternative_notes)
         elif random_tonality in mixed_sign_tonality:
             random_note = rd.choice(notes + alternative_notes)
-        
+
+        if easy_tonality_mode:
+            random_note = "C" # BABY MODE, AND TO DEBUG
+
         random_quality = rd.choice(list(basic_quality_without_7th.keys()) + list(basic_quality_with_7th.keys()) + list(basic_quality_with_9th.keys()) + list(basic_quality_with6.keys()))
         
         if random_quality in basic_quality_without_7th or random_quality in basic_quality_with6 or random_quality in basic_quality_with_7th:

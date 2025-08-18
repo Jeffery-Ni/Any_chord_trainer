@@ -16,7 +16,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 
 - **Flexible tonality system**  
   - “Baby mode” locks everything to **C** so you can focus on chord qualities.  
-  - Full mode randomly chooses from 21 tonalities (sharps, flats, and enharmonic mixes).
+  - Full mode randomly chooses from 21 tonality signs (sharps, flats, and mixed-sign ones).
 
 - **Water reminder** *(optional)*  
   A background thread that GENTLY nags you to drink water every 20 minutes so you stay hydrated while practicing.  

@@ -13,7 +13,7 @@ import play_chord_test as pct
 
 
 
-def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=False, easy_tonality_mode=False, easy_reading_mode=False, play_the_chord=False):
+def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=True, easy_tonality_mode=True, easy_reading_mode=False, play_the_chord=True):
     sharp_sign_tonality = ['C', 'G', 'D', 'A', 'E','e','b','f#','c#']
     flat_sign_tonality = ['F', 'Bb', 'Eb', 'Ab','d','g','c','f']
     mixed_sign_tonality = ['g#','eb/d#','bb','Db', 'Gb/F#', 'B']
@@ -188,6 +188,11 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
             
             print(f"{chosen_UI_phrase}: {printed_chord}")
 
+        if ("7" in random_quality) and (random_modification):  # if the chord already has a 7th, mod will not have a 7th note
+            if "12" in chord_components:
+                chord_components.remove("12")
+        else:
+            pass
 
         random_note_value = notes_dictionary.get(random_note) or alternative_notes_dictionary.get(random_note)
         chord_components = [x + random_note_value for x in chord_components]
@@ -215,11 +220,12 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
         played_notes = []
         for i in range(len(clean_chord_components)):
             base = 4
-            numb_oct = clean_chord_components[i] // 12 
+            numb_oct = ( clean_chord_components[i] -1 )// 12 
             played_notes.append(print_notes[i]+f'{base + numb_oct}')
 
         print("you should play the following notes:", print_notes)
-        #print("debug: played_notes", played_notes)
+        
+        print("debug: played_notes", played_notes)
         if play_the_chord:
             pct.play_arpeggio_then_chord(played_notes) 
         #time.sleep(3)# let the chord play

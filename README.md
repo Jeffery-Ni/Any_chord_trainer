@@ -49,8 +49,8 @@ Currently, *getachord()* function, the main function of the code takes in 6 vari
 | `easy_tonality_mode` | bool | False   | Lock tonality and chosen note to C    |
 | `easy_reading_mode`  | bool | False   | Use or don't use pipe-separated symbols for clarity |
 | 🎧🎧`play_the_chord`  | bool | False   | * This one uses additional module called "sounddevice" from play_chord_test.py |
-*I actually forgot whats the default, I guess you can change it to whatever you need*
 
+*I actually forgot whats the default, I guess you can change it to whatever you need*
 
 If the training is too hard for you with all of these options, turn some of them off with "True" to that variable
 If you want to, you could also start modding and pulling this function:

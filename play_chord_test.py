@@ -17,6 +17,15 @@ def normalize_note(n):          # unifies expressions like "C#" and "Db"
     octv = n[-1]
     return (SHARP_TO_FLAT.get(name, name) + octv)
 
+# def normalize_note(n):
+#     n = n.upper()
+#     oct_idx = next(i for i, ch in enumerate(n) if ch.isdigit())
+#     name = n[:oct_idx]          
+#     octv = n[oct_idx:]
+#     name = SHARP_TO_FLAT.get(name, name)
+#     return name[0] + octv    
+
+
 def note_to_freq(note):
     name = normalize_note(note)
     pitch = name[:-1].upper()
@@ -50,7 +59,7 @@ def play_arpeggio_then_chord(notes, arp_duration=0.25, chord_duration=1.0,
 
 # ---------- example ----------
 if __name__ == "__main__":
-    _keep = play_arpeggio_then_chord(["E4", "G#4", "B4", "D5"])
+    _keep = play_arpeggio_then_chord( ['C4', 'E4', 'G4', 'B5', 'D5', 'F5', 'A5'])
     # _keep variable keeps PlayObject from getting garbage collected
     # This is a workaround for the issue where the sound stops playing immediately or stops immediately after the function returns.
     input("debug fake input: ")

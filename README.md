@@ -38,8 +38,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
 python chord_trainer.py
 ```
 ## ⚒ Options and Modding
-Currently, *getachord()* function, the main function of the code takes in 6 variables:
-*I actually forgot whats the default, I guess you can change it to whatever you need*
+Currently, *getachord()* function, the main function of the code takes in 6 variables (*I actually forgot whats the default, I guess you can change it to whatever you need*):
 
 | Flag                 | Type | Default | Meaning                                |
 | -------------------- | ---- | ------- | -------------------------------------- |

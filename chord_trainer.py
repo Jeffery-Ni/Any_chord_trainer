@@ -189,7 +189,8 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
             print(f"{chosen_UI_phrase}: {printed_chord}")
 
 
-        if ("6" or "7" or "9" in random_quality) and (random_modification):  # if the chord already has a 7th, mod will not have a 7th note
+        if any(x in random_quality for x in ("6", "7", "9")) and random_modification:  # if the chord already has a 7th, mod will not have a 7th note
+            print("this is the current modification: ", random_modification)
             print("entering this stage, debug: current chord_components:", chord_components)
             if 12 in chord_components:
                 chord_components.remove(12)
@@ -198,13 +199,11 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
             pass
         if (random_quality in ["dim", "aug"] and not any(x in random_quality for x in ["6", "7", "9"])) and random_modification:
             if "dim" in random_quality:
-                chord_components.add(10)
+                chord_components.append(10)
             if "aug" in random_quality:
-                chord_components.add(11)    
+                chord_components.append(11)    
 
 
-
-        random_modification = ""
         random_note_value = notes_dictionary.get(random_note) or alternative_notes_dictionary.get(random_note)
         chord_components = [x + random_note_value for x in chord_components]
         sorted_chord_components = sorted(chord_components)

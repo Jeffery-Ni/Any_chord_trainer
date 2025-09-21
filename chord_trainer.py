@@ -56,33 +56,42 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
                                  'dim': [1,4,7], 
                                  'aug': [1,5,9],
                                  'sus2': [1,3,8],
+                                 '+': [1,5,9],
+                                 '°': [1,4,7],
                                  'sus4': [1,6,8]} # Major is ommited
 
-    basic_quality_with6 = {'6' or 'M6' or 'maj6' or 'Δ6': [1,5,8,10], 
-                            'm6' or 'min6' or '-6': [1,4,8,10]}
+    basic_quality_with6 = {
+        '6': [1,5,8,10], 'M6': [1,5,8,10], 'maj6': [1,5,8,10], 'Δ6': [1,5,8,10],
+        'm6': [1,4,8,10], 'min6': [1,4,8,10], '-6': [1,4,8,10]
+    }
 
-    basic_quality_with_7th = {'M7' or 'maj7' or 'Δ7': [1,5,8,12],
-                              '7': [1,5,8,11], 
-                              'm(M7)' or 'min(maj7)' or '-(Δ7)':[1,4,8,12], 
-                              'm7' or 'min7' or '-7': [1,4,8,11], 
-                              '∅7': [1,4,7,11],
-                              'dim7' or '°7':[1,4,7,10],
-                              'aug7' or '+7':[1,5,9,11]}
-    
-    basic_quality_with_9th = {'M9' or 'maj9' or 'Δ9':[1,5,8,12,15], 
-                              '9':[1,5,8,11,15], 
-                              'm(M9)' or 'min(maj9)' or '-(Δ9)':[1,4,8,12,15], 
-                              'm9' or 'min9' or '-9':[1,4,8,11,15], 
-                              '∅9':[1,4,7,11,15],
-                              'dim9' or '°9': [1,4,7,10,15],
-                              'aug9' or '+9': [1,5,9,11,15]} 
+    # Map all aliases to the same chord structure
+    basic_quality_with_7th = {
+        'M7': [1,5,8,12], 'maj7': [1,5,8,12], 'Δ7': [1,5,8,12],
+        '7': [1,5,8,11],
+        'm(M7)': [1,4,8,12], 'min(maj7)': [1,4,8,12], '-(Δ7)': [1,4,8,12],
+        'm7': [1,4,8,11], 'min7': [1,4,8,11], '-7': [1,4,8,11],
+        '∅7': [1,4,7,11],
+        'dim7': [1,4,7,10], '°7': [1,4,7,10],
+        'aug7': [1,5,9,11], '+7': [1,5,9,11]
+    }
+
+    basic_quality_with_9th = {
+        'M9': [1,5,8,12,15], 'maj9': [1,5,8,12,15], 'Δ9': [1,5,8,12,15],
+        '9': [1,5,8,11,15],
+        'm(M9)': [1,4,8,12,15], 'min(maj9)': [1,4,8,12,15], '-(Δ9)': [1,4,8,12,15],
+        'm9': [1,4,8,11,15], 'min9': [1,4,8,11,15], '-9': [1,4,8,11,15],
+        '∅9': [1,4,7,11,15],
+        'dim9': [1,4,7,10,15], '°9': [1,4,7,10,15],
+        'aug9': [1,5,9,11,15], '+9': [1,5,9,11,15]
+    }
 
 
 
     modifications = {
-                    ' 9':[12,15],
-                    ' 11':[12,15,18], 
-                    ' 13':[12,15,18,22],
+                    ' 9':[11,15],
+                    ' 11':[11,15,18], 
+                    ' 13':[11,15,18,22],
                     '':[]} # 6th is not
 
     extensions = {
@@ -169,7 +178,7 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
                 printed_chord = f"{random_note}{random_quality}|{random_extension}|{random_omission}"
             else:
                 printed_chord = f"{random_note}{random_quality}{random_extension}{random_omission}"
-            
+            random_modification = '' # to avoid confusion
             print(f"{chosen_UI_phrase}: {printed_chord}")
 
         if result == 'temp_modification':
@@ -185,23 +194,40 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
                 printed_chord = f"{random_note}{random_quality}|{random_modification}|{random_omission}"
             else:
                 printed_chord = f"{random_note}{random_quality}{random_modification}{random_omission}"
-            
+            random_extension = '' # to avoid confusion
             print(f"{chosen_UI_phrase}: {printed_chord}")
 
 
         if any(x in random_quality for x in ("6", "7", "9")) and random_modification:  # if the chord already has a 7th, mod will not have a 7th note
             print("this is the current modification: ", random_modification)
             print("entering this stage, debug: current chord_components:", chord_components)
+            if 11 in chord_components:
+                chord_components.remove(11)
+            if "6" in random_quality:
+                if 11 in chord_components:
+                    chord_components.remove(11)
             if 12 in chord_components:
-                chord_components.remove(12)
-                #print("debug: removed 12")
+                if 11 in chord_components:
+                    chord_components.remove(11)
+
         else:
             pass
-        if (random_quality in ["dim", "aug"] and not any(x in random_quality for x in ["6", "7", "9"])) and random_modification:
-            if "dim" in random_quality:
+        if (random_quality in ["dim", "aug", "°", "+"] and not any(x in random_quality for x in ["6", "7", "9"])) and random_modification:
+            if "dim" in random_quality or "°" in random_quality:
                 chord_components.append(10)
-            if "aug" in random_quality:
-                chord_components.append(11)    
+                if 11 in chord_components:
+                    chord_components.remove(11)
+                if 12 in chord_components:
+                    chord_components.remove(12)
+            if "aug" in random_quality or "+" in random_quality:
+                pass
+        if random_quality in ['M7', 'maj7', 'Δ7'] and random_modification:
+            if 11 in chord_components:
+                chord_components.remove(11)
+                chord_components.append(12)
+            if 10 in chord_components:
+                chord_components.remove(10)
+                chord_components.append(12)
 
 
         random_note_value = notes_dictionary.get(random_note) or alternative_notes_dictionary.get(random_note)
@@ -217,7 +243,7 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
                                    ]
         #print("debug: cleaned_chord_components", cleaned_chord_components)
         
-        
+         
         if random_tonality in sharp_sign_tonality:
             print_notes = [notes[i-1] for i in cleaned_chord_components]
         if random_tonality in flat_sign_tonality:

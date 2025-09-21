@@ -34,7 +34,7 @@ def note_to_freq(note):
     n = 12 * (octv - 4) + semitone - 9
     return 440.0 * (2 ** (1/12)) ** n
 
-def make_sine(f, duration=0.25, sr=44100, amp=0.3):
+def make_sine(f, duration=0.25, sr=44100, amp=0.07):
     t = np.linspace(0, duration, int(sr*duration), False)
     return amp * np.sin(2*np.pi*f*t)
 

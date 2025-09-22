@@ -16,7 +16,7 @@ omission_chance = 0.8  # Set your desired chance (0 to 1)
 extension_chance = 0.8  # Set your desired chance (0 to 1)
 modification_chance = 0.8  # Set your desired chance (0 to 1)
 
-def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=False, easy_tonality_mode=True, easy_reading_mode=False, play_the_chord=True):
+def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=False, easy_tonality_mode=False, easy_reading_mode=False, play_the_chord=True):
     sharp_sign_tonality = ['C', 'G', 'D', 'A', 'E','e','b','f#','c#']
     flat_sign_tonality = ['F', 'Bb', 'Eb', 'Ab','d','g','c','f']
     mixed_sign_tonality = ['g#','eb/d#','bb','Db', 'Gb/F#', 'B']
@@ -215,8 +215,8 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
 
 
         if any(x in random_quality for x in ("6", "7", "9")) and random_modification:  # if the chord already has a 7th, mod will not have a 7th note
-            print("this is the current modification: ", random_modification)
-            print("entering this stage, debug: current chord_components:", chord_components)
+            # print("debug: this is the current modification: ", random_modification)
+            # print("entering this stage, debug: current chord_components:", chord_components)
             if 11 in chord_components:
                 chord_components.remove(11)
             if "6" in random_quality:

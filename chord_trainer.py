@@ -2,7 +2,7 @@ import water_prompt as wp # This is a separate module that contains the water re
 import threading
 t = threading.Thread(target=wp.water_timer, daemon=True)
 t.start()
-
+import time
 
 import random as rd
 import shutil
@@ -12,8 +12,11 @@ width = shutil.get_terminal_size().columns
 import play_chord_test as pct
 
 
+omission_chance = 0.8  # Set your desired chance (0 to 1)
+extension_chance = 0.8  # Set your desired chance (0 to 1)
+modification_chance = 0.8  # Set your desired chance (0 to 1)
 
-def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=True, easy_tonality_mode=True, easy_reading_mode=False, play_the_chord=True):
+def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_omissions=False, easy_tonality_mode=True, easy_reading_mode=False, play_the_chord=True):
     sharp_sign_tonality = ['C', 'G', 'D', 'A', 'E','e','b','f#','c#']
     flat_sign_tonality = ['F', 'Bb', 'Eb', 'Ab','d','g','c','f']
     mixed_sign_tonality = ['g#','eb/d#','bb','Db', 'Gb/F#', 'B']
@@ -102,9 +105,9 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
 
     omittions = {
                  ' no9':[15],
-                 ' no7':[12, 11],
-                 ' no5':[8], 
-                 ' no3':[5,4], 
+                 ' no7':[12, 11, 10],
+                 ' no5':[9,8,7], 
+                 ' no3':[5,4,3], 
                  '':[],
                  }
 
@@ -147,22 +150,33 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
         if no_extention:
             random_extension = rd.choice(temp_extension[3:])
         else:
-            random_extension = rd.choice(temp_extension[va:])
+            if rd.random() < extension_chance:
+                random_extension = rd.choice(temp_extension[va:])
+            else:
+                random_extension = rd.choice(temp_extension[3:])
 
 
         temp_modification = list(modifications.keys())
         if no_modification:
             random_modification = rd.choice(temp_modification[3:])
         else:
-            random_modification = rd.choice(temp_modification[va:])
+            if rd.random() < modification_chance:
+                random_modification = rd.choice(temp_modification[va:])
+            else:
+                random_modification = rd.choice(temp_modification[3:])
 
         result = rd.choice(['temp_extension', 'temp_modification'])
 
         temp_omittions = list(omittions.keys())
+        
+
         if no_omissions:
             random_omission = rd.choice(temp_omittions[4:])
         else:
-            random_omission = rd.choice(temp_omittions[vb:])
+            if rd.random() < omission_chance:
+                random_omission = rd.choice(temp_omittions[vb:])
+            else:
+                random_omission = rd.choice(temp_omittions[4:])
 
         chosen_UI_phrase = rd.choice(UI_phrase)
         if result == 'temp_extension':
@@ -181,6 +195,8 @@ def getachord(number_of_chords=1, no_modification=False, no_extention=False, no_
             random_modification = '' # to avoid confusion
             print(f"{chosen_UI_phrase}: {printed_chord}")
 
+
+                
         if result == 'temp_modification':
             #print("debug: modification")
             #chord_components = target_dict[random_quality] + modifications[random_modification] - omittions[random_omission]

@@ -15,7 +15,7 @@ Perfect for drilling jazz chords, classical harmony, or just getting faster at r
   - *Gibberish mode* – compact symbols, e.g. `Cmaj7add9no5` (I don't know how to output corner mark in command lines so good luck reading this).
 
 - **Flexible tonality system**  
-  - “Baby mode” locks everything to **C** so you can focus on chord qualities.  
+  - “Baby mode” locks everything to **C** or other tonality you want so you can focus on chord qualities.  
   - Full mode randomly chooses from 21 tonality signs (sharps, flats, and mixed-sign ones).
 
 - **Water reminder** *(optional)*  

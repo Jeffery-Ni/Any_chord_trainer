@@ -83,7 +83,7 @@ Fine, I'll go >:(
 ```
 ## 🤝 Contributing
 Pull requests welcome!
-Ideas: MIDI output, GUI, statistics tracking, or more chord symbols.
+Ideas: MIDI input/output, GUI, statistics tracking, or more chord symbols, options.
 
 ## 📜 Lisence
 Published under GPL v3.0 lisence
